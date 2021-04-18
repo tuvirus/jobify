@@ -7,6 +7,8 @@ server.use(express.static('public'));
 const fetch = require('node-fetch');
 const fs = require('fs');
 
+
+
 const usuarios = [
     {
         
@@ -46,8 +48,8 @@ server.get('/api/v1/auth/', (request, response) => {
 
 server.get('/api/v1/jobs', (request, response) => {
  
-    let rawdata = fs.readFileSync('db.json');
-    let jobss = JSON.parse(rawdata);
+    let db_rawdata = fs.readFileSync('./src/db.json');
+    let jobss = JSON.parse(db_rawdata);
     
     response
     .status(200)
